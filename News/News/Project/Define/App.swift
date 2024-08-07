@@ -6,10 +6,13 @@
 //
 
 import Foundation
+import UIKit
 
 struct App {
     struct Key {
         let baseURL: String = "https://pokeapi.co/api/v2/"
+        let screenWidth: CGFloat = UIScreen.main.bounds.width
+        let screenHeight: CGFloat = UIScreen.main.bounds.height
     }
     
     struct Text {

@@ -20,8 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // HOME
         let homeVC = HomeViewController()
         let homeNavi = BaseNavigationController(rootViewController: homeVC)
-        homeNavi.navigationController?.isNavigationBarHidden = true
-        homeNavi.tabBarItem = UITabBarItem(title: "Tin tức", image: UIImage(named: "house"), tag: 0)
+        homeNavi.tabBarItem = UITabBarItem(title: "Trang chủ", image: UIImage(named: "house"), tag: 0)
         
         // VIDEO
         let videoVC = VideoViewController()

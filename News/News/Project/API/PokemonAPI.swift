@@ -40,7 +40,7 @@ class APIService {
         task.resume()
     }
     
-    func getPokemonImage(name: String, completion: @escaping (Result<String, Error>) -> Void) {
+    func getPokemonImage(name: String, completion: @escaping (Result<DetailPokemonResponse, Error>) -> Void) {
         guard let url = URL(string: "https://pokeapi.co/api/v2/pokemon/\(name)") else {
             print("Invalid URL")
             return
@@ -59,14 +59,9 @@ class APIService {
             }
 
             do {
-                let pokemonResponse = try JSONDecoder().decode(PokemonSpritesResponse.self, from: data)
+                let pokemonResponse = try JSONDecoder().decode(DetailPokemonResponse.self, from: data)
                 // Access the desired sprite URL
-                if let frontDefault = pokemonResponse.sprites.front_default {
-                    completion(.success(frontDefault))
-                } else {
-                    let error = NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "No sprite URL found"])
-                    completion(.failure(error))
-                }
+                completion(.success(pokemonResponse))
             } catch let jsonError {
                 completion(.failure(jsonError))
             }

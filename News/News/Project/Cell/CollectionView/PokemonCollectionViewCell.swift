@@ -17,7 +17,8 @@ class PokemonCollectionViewCell: UICollectionViewCell {
     }
     
     func setupData(image: String = "", name: String) {
-        self.card.lbCard.text = image
+        self.card.imgCard.loadImage(from: image, into: self.card.imgCard)
+        self.card.lbCard.text = name
     }
 
 }

@@ -29,21 +29,31 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bEP-2V-nf7">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Doy-QG-Zzx">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="400"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Doy-QG-Zzx">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="424"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SBe-ak-Lfh">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pokedex" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tju-oP-ioJ">
+                                            <rect key="frame" x="161.66666666666666" y="67.666666666666671" width="69.666666666666657" height="20.333333333333329"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" systemColor="systemBlueColor"/>
                                     <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="tju-oP-ioJ" secondAttribute="bottom" constant="12" id="0Lr-Zh-dWa"/>
                                         <constraint firstAttribute="height" constant="100" id="Okv-uE-JUP"/>
+                                        <constraint firstItem="tju-oP-ioJ" firstAttribute="centerX" secondItem="SBe-ak-Lfh" secondAttribute="centerX" id="rr4-MX-Pze"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5E6-zh-k8c">
-                                    <rect key="frame" x="0.0" y="100" width="393" height="300"/>
+                                    <rect key="frame" x="0.0" y="112" width="393" height="300"/>
                                     <subviews>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="bpR-U8-XSB">
-                                            <rect key="frame" x="16" y="16" width="361" height="258"/>
+                                            <rect key="frame" x="16" y="16" width="361" height="254"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AO1-g4-s2f">
                                                 <size key="itemSize" width="128" height="128"/>
@@ -53,10 +63,12 @@
                                             </collectionViewFlowLayout>
                                         </collectionView>
                                         <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Ybj-qg-Bev">
-                                            <rect key="frame" x="0.0" y="284" width="393" height="16"/>
+                                            <rect key="frame" x="0.0" y="280" width="393" height="20"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="16" id="KVH-t7-VLl"/>
+                                                <constraint firstAttribute="height" constant="20" id="KVH-t7-VLl"/>
                                             </constraints>
+                                            <color key="pageIndicatorTintColor" systemColor="tableCellBlueTextColor"/>
+                                            <color key="currentPageIndicatorTintColor" systemColor="labelColor"/>
                                         </pageControl>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -72,7 +84,7 @@
                                     </constraints>
                                 </view>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="LJw-nm-m60">
-                                    <rect key="frame" x="0.0" y="400" width="393" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="424" width="393" height="0.0"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" id="pAi-xI-Th5"/>
@@ -104,10 +116,16 @@
         </view>
     </objects>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tableCellBlueTextColor">
             <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>

@@ -19,13 +19,21 @@ struct Pokemon: Codable {
     let url: String
 }
 
-struct PokemonSpritesResponse: Codable {
-    let id: Int
-    let sprites: PokemonSpritesEntity
+struct DetailPokemonResponse: Codable {
+    let id: Int?
+    let name: String?
+    let weight: Int?
+    let base_experience: Int?
+    let order: Int?
+    
+    let sprites: DetailPokemonEntity?
 }
 
-struct PokemonSpritesEntity: Codable {
+struct DetailPokemonEntity: Codable {
     let front_default: String?
+    let back_default: String?
+    let front_shiny: String?
+    let back_shiny: String?
 }
 
 
